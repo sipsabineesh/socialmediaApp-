@@ -10,7 +10,7 @@ const useGetSuggestedUsers= () => {
     useEffect(() => {
         const fetchSuggestedUsers = async() => {
           try {
-                const res= await axios.get('http://localhost:8000/api/user/suggested',
+                const res= await axios.get('https://socialmediaapp-8vkg.onrender.com/api/user/suggested',
                     {
                         withCredentials:true
                     }

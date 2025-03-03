@@ -36,7 +36,7 @@ const CommentDialog = ({open,setOpen}) => {
 
   const sendCommentHandler = async () => {
     try {
-        const res = await axios.post(`http://localhost:8000/api/post/${selectedPost?._id}/comment`,{text},{
+        const res = await axios.post(`https://socialmediaapp-8vkg.onrender.com/api/post/${selectedPost?._id}/comment`,{text},{
             headers:{
                 'Content-Type':'application/json'
             },           

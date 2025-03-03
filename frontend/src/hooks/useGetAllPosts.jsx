@@ -9,7 +9,7 @@ const useGetAllPosts = () => {
     useEffect(() => {
         const fetchAllPost = async() => {
           try {
-                const res= await axios.get('http://localhost:8000/api/post/all/',
+                const res= await axios.get('https://socialmediaapp-8vkg.onrender.com/api/post/all/',
                     {
                         withCredentials:true
                     }

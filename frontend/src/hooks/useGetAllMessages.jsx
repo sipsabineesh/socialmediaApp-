@@ -10,7 +10,7 @@ const useGetAllMessages = (selectedUser) => {
     useEffect(() => {
         const fetchAllMessages = async() => {
           try {
-                const res= await axios.get(`http://localhost:8000/api/message/all/${selectedUser?._id}`,
+                const res= await axios.get(`https://socialmediaapp-8vkg.onrender.com/api/message/all/${selectedUser?._id}`,
                     {
                         withCredentials:true
                     }

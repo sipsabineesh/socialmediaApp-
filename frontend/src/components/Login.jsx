@@ -38,7 +38,7 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/api/user/login",
+        "https://socialmediaapp-8vkg.onrender.com/api/user/login",
         input,
         {
           headers: {

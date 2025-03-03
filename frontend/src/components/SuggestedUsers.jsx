@@ -11,7 +11,7 @@ const SuggestedUsers = () =>{
   const {user,suggestedUsers} = useSelector((store) => store.auth) || [];
   const followOrUnfollowHandler = async(userId) => {
     try {
-       const res = await axios.post(`http://localhost:8000/api/user/${userId}/followorunfollow`,{},{withCredentials: true});
+       const res = await axios.post(`https://socialmediaapp-8vkg.onrender.com/api/user/${userId}/followorunfollow`,{},{withCredentials: true});
        if(res.data.success){
          toast.success(res.data.message);
          const updatedUsers = suggestedUsers.map((suggestUser) =>

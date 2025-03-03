@@ -43,7 +43,7 @@ const Post = ({post}) => {
     const likeDislikeHandler = async(postId) => { 
         try {
             const action = liked ? 'dislike' : 'like';
-            const res = await axios.get(`http://localhost:8000/api/post/${postId}/${action}`,{withCredentials:true})
+            const res = await axios.get(`https://socialmediaapp-8vkg.onrender.com/api/post/${postId}/${action}`,{withCredentials:true})
             if(res.data.success){
                 const updatedLikes = liked ? postLiked - 1 : postLiked + 1;
                 dispatch(setPosts())
@@ -65,7 +65,7 @@ const Post = ({post}) => {
 
     const commentHandller = async () => {
         try {
-            const res = await axios.post(`http://localhost:8000/api/post/${post._id}/comment`,{text},{
+            const res = await axios.post(`https://socialmediaapp-8vkg.onrender.com/api/post/${post._id}/comment`,{text},{
                 headers:{
                     'Content-Type':'application/json'
                 },           
@@ -90,7 +90,7 @@ const Post = ({post}) => {
 
     const bookmarkHandler = async() => {
      try {
-        const res =  await axios.get(`http://localhost:8000/api/post/${post._id}/bookmark`,{withCredentials:true})
+        const res =  await axios.get(`https://socialmediaapp-8vkg.onrender.com/api/post/${post._id}/bookmark`,{withCredentials:true})
         if(res.data.success){
           
             toast.success(res.data.message)
@@ -101,7 +101,7 @@ const Post = ({post}) => {
     }
     const deletePostHandler = async() => {
         try {
-            const res = await axios.delete(`http://localhost:8000/api/post/delete/${post._id}`,{withCredentials:true})
+            const res = await axios.delete(`https://socialmediaapp-8vkg.onrender.com/api/post/delete/${post._id}`,{withCredentials:true})
             if(res.data.success){
                 const updatedPost = posts.filter((postItem) => postItem?._id !== post?._id)
                 dispatch(setPosts(updatedPost))
@@ -115,7 +115,7 @@ const Post = ({post}) => {
 
      const followOrUnfollowHandler = async(userId) => {
           try {
-             const res = await axios.post(`http://localhost:8000/api/user/${userId}/followorunfollow`,{},{withCredentials: true});
+             const res = await axios.post(`https://socialmediaapp-8vkg.onrender.com/api/user/${userId}/followorunfollow`,{},{withCredentials: true});
              if(res.data.success){
                toast.success(res.data.message);
               const updatedUsers = suggestedUsers.map((suggestUser) =>

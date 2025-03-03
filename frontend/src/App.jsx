@@ -53,7 +53,7 @@ function App() {
   const {socket} = useSelector(store => store.socketio)
   useEffect(() => {
   if(user){
-    const socketio = io('http://localhost:8000',{
+    const socketio = io('https://socialmediaapp-8vkg.onrender.com',{
       query:{
         userId:user?._id
       },
@@ -85,7 +85,7 @@ function App() {
 //         // Fetch notifications when the user logs in
 //         const fetchNotifications = async () => {
 //             try {
-//                 const res = await axios.get('http://localhost:8000/api/notification/all', { withCredentials: true });
+//                 const res = await axios.get('https://socialmediaapp-8vkg.onrender.com/api/notification/all', { withCredentials: true });
 //                 if (res.data.success) {
 //                     dispatch(setLikeNotification(res.data.notifications));
 //                 }

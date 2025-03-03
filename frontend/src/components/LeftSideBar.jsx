@@ -29,7 +29,7 @@
   
 //   const logoutHandler = async() => {
 //     try {
-//         const res = await axios.get('http://localhost:8000/api/user/logout',{
+//         const res = await axios.get('https://socialmediaapp-8vkg.onrender.com/api/user/logout',{
 //             withCredentials:true
 //         })
 //         if(res.data.success){
@@ -65,7 +65,7 @@
 //   }
 
 //   const markNotificationsAsRead = async() => { 
-//     const res = await axios.put('http://localhost:8000/api/notification/read',{},{
+//     const res = await axios.put('https://socialmediaapp-8vkg.onrender.com/api/notification/read',{},{
 //       withCredentials:true
 //     })
 //     console.log("res",res)
@@ -204,7 +204,7 @@ const LeftSideBar = () => {
 
   const logoutHandler = async() => {
     try {
-        const res = await axios.get('http://localhost:8000/api/user/logout',{
+        const res = await axios.get('https://socialmediaapp-8vkg.onrender.com/api/user/logout',{
             withCredentials:true
         })
         if(res.data.success){
@@ -239,7 +239,7 @@ const LeftSideBar = () => {
   }
 
   const markNotificationsAsRead = async() => { 
-    await axios.put('http://localhost:8000/api/notification/read',{}, {
+    await axios.put('https://socialmediaapp-8vkg.onrender.com/api/notification/read',{}, {
       withCredentials:true
     })
     dispatch(setNotificationsAsRead())
